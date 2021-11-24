@@ -1,11 +1,14 @@
 const {Schema, model } =  require('mongoose');
   
 
-
+const rolesValidos = {
+    values: ["ADMIN", "CLIENT"],
+    message: '{VALUE} no es un role válido'
+}
 const UsuarioSchema = Schema ({
-    nombre: {
+    name: {
         type: String,
-       
+        require:true
     },
     email:{
         type:  String,
@@ -16,9 +19,30 @@ const UsuarioSchema = Schema ({
         type: String,
         require: true
     },
-    telefono: {
+    phone: {
         type: String,
         
+    },
+
+    document: {
+        type: String,
+        require: true
+    },
+
+    address: {
+        type: String,
+        
+    },   
+    
+    city: {
+        type: String,
+        require: true
+    },
+    role: {
+        type: String,
+        default: 'CLIENT',
+        required: [true],
+        enum: rolesValidos,
     }
 });
 
