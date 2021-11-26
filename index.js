@@ -11,6 +11,7 @@ app.use(express.json());
 dbconect();
 
 app.use('/api/usuarios', require('./routes/usuarios'));
+
 //console.log(process.env);
 //rutas
 
