@@ -11,6 +11,8 @@ app.use(express.json());
 dbconect();
 
 app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/addRent', require('./routes/addrent'));
+app.use('/api/addsale', require('./routes/addsale'));
 
 //console.log(process.env);
 //rutas

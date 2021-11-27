@@ -20,9 +20,9 @@ const crearUsuario = async (req, res) => {
       usuario: usuario,
     });
   } catch (error) {
-    let errorMessage = 'error en el servidor'
+    let errorMessage = 'Error en el servidor'
     if (error.code==11000){
-        errorMessage='el email ya existe en la base de datos ' 
+        errorMessage='El email ya existe en la base de datos ' 
     } 
     res.status (500) .json({
         
