@@ -10,9 +10,9 @@ app.use(express.json());
 //base
 dbconect();
 
-app.use('/api/usuarios', require('./routes/usuarios'));
-app.use('/api/addRent', require('./routes/addrent'));
-app.use('/api/addsale', require('./routes/addsale'));
+app.use('/api/usuarios', require('./routes/users.route'));
+app.use('/api/addRent', require('./routes/rents.route'));
+app.use('/api/addsale', require('./routes/sales.route'));
 
 //console.log(process.env);
 //rutas
