@@ -31,10 +31,30 @@ const crearVenta = async (req, res) => {
   }
 };
 
+const updateSales = async (req, res) => {
+  try {
+    const {_id, ...data} = req.body;
+    const sales = await Sale.findByIdAndUpdate(_id, data);
+    res.json({
+      ok: true,
+      sale
+    });
+  } catch (error) {
+    let errorMessage = 'Error en el servidor'
+
+    res.status (500) .json({
+        ok: false,
+        errorMessage
+    });
+    console.log(error)
+  }
+};
+
 
 
 module.exports = {
   crearVenta,
   getSales,
+  updateSales,
  
 };

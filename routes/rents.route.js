@@ -1,12 +1,13 @@
 
 const { Router } = require ('express');
-const { getRents,  crearAbono } = require('../controllers/rents');
+const { getRents,  crearAbono, updateRents } = require('../controllers/rents');
 
 
 const route = Router();
 
 route.get('/', getRents );
 route.post('/', crearAbono );
+route.post('/update', updateRents );
 
 
 module.exports = route;

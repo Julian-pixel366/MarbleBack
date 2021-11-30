@@ -52,8 +52,28 @@ const login = async (req, res) => {
   }
 };
 
+const updateUsuarios = async (req, res) => {
+  try {
+    const {_id, ...data} = req.body;
+    const usuarios = await Usuario.findByIdAndUpdate(_id, data);
+    res.json({
+      ok: true,
+      usuarios
+    });
+  } catch (error) {
+    let errorMessage = 'Error en el servidor'
+
+    res.status (500) .json({
+        ok: false,
+        errorMessage
+    });
+    console.log(error)
+  }
+};
+
 module.exports = {
   getUsuarios,
   crearUsuario,
   login,
+  updateUsuarios,
 };

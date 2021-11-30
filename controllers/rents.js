@@ -33,10 +33,30 @@ const crearAbono = async (req, res) => {
   }
 };
 
+const updateRents = async (req, res) => {
+  try {
+    const {_id, ...data} = req.body;
+    const rents = await Rent.findByIdAndUpdate(_id, data);
+    res.json({
+      ok: true,
+      rents
+    });
+  } catch (error) {
+    let errorMessage = 'Error en el servidor'
+
+    res.status (500) .json({
+        ok: false,
+        errorMessage
+    });
+    console.log(error)
+  }
+};
+
 
 
 module.exports = {
   getRents,
   crearAbono,
+  updateRents,
  
 };
