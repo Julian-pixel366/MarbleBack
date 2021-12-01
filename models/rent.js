@@ -22,6 +22,10 @@ const rentSchema = Schema ({
         type: String,
         require: true
     },
+    price: {
+        type: String,
+        require: true
+    },
     product: {
         type: String,
         require: true

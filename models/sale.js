@@ -6,6 +6,10 @@ const SaleSchema = Schema ({
         type: String,
         require:true
     },
+    nameprodruct: {
+        type: String,
+        require: true
+    },
     email: {
         type: String,
         require: true

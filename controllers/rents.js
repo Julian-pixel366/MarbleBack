@@ -12,12 +12,12 @@ const crearAbono = async (req, res) => {
     
     const dataRent = req.body;
 
-    const rent = new Rent(dataRent);
-    await rent.save();
+    const rents = new Rent(dataRent);
+    await rents.save();
     console.log(req.body);
     res.json({
       ok: true,
-      rent
+      rents
     });
   } catch (error) {
     let errorMessage = 'Error en el abono'
