@@ -35,4 +35,4 @@ const valueSchema = Schema ({
     }
 });
 
-module.exports = model('rent', rentSchema);
+module.exports = model('value', valueSchema);
