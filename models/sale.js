@@ -6,7 +6,7 @@ const SaleSchema = Schema ({
         type: String,
         require:true
     },
-    nameprodruct: {
+    nameproduct: {
         type: String,
         require: true
     },

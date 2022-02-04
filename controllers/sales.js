@@ -50,11 +50,32 @@ const updateSales = async (req, res) => {
   }
 };
 
+const salesByUser = async (req, res) => {
+  try {
+    const email = req.query.email;
+    const sales = await Sale.find({
+      email,
+    });
+    res.json({
+      ok: true,
+      sales,
+    });
+  } catch (error) {
+    let errorMessage = "Error en el servidor";
+
+    res.status(500).json({
+      ok: false,
+      errorMessage,
+    });
+    console.log(error);
+  }
+};
 
 
 module.exports = {
   crearVenta,
   getSales,
   updateSales,
+  salesByUser
  
 };

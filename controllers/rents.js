@@ -51,6 +51,27 @@ const updateRents = async (req, res) => {
     console.log(error)
   }
 };
+const rentsByUser = async (req, res) => {
+  try {
+    const email = req.query.email;
+    const rents = await Rent.find({
+      email,
+    });
+    res.json({
+      ok: true,
+      rents,
+    });
+  } catch (error) {
+    let errorMessage = "Error en el servidor";
+
+    res.status(500).json({
+      ok: false,
+      errorMessage,
+    });
+    console.log(error);
+  }
+};
+
 
 
 
@@ -58,5 +79,6 @@ module.exports = {
   getRents,
   crearAbono,
   updateRents,
+  rentsByUser
  
 };
