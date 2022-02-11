@@ -21,7 +21,7 @@ const valueSchema = Schema ({
         type: String,
         require: true
     },
-    department: {
+    product: {
         type: String,
         require: true
     },
@@ -32,6 +32,10 @@ const valueSchema = Schema ({
     material: {
         type: String,
         require: true
+    },
+    size: {
+        type: String,
+        require: true 
     }
 });
 

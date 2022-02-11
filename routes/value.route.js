@@ -1,12 +1,12 @@
 const { Router } = require ('express');
-const { getValue,  crearCotizacion, updateValue } = require('../controllers/value');
+const { getValue,  crearCotizacion, valueByUser } = require('../controllers/value');
 
 
 const route = Router();
 
 route.get('/', getValue );
 route.post('/', crearCotizacion );
-route.post('/update', updateValue );
+route.get('/valueByUser', valueByUser );
 
 
 module.exports = route;

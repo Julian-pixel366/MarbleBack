@@ -32,28 +32,32 @@ const crearCotizacion = async (req, res) => {
       }
     };
 
-    const updateValue = async (req, res) => {
-        try {
-          const {_id, ...data} = req.body;
-          const value = await Value.findByIdAndUpdate(_id, data);
-          res.json({
-            ok: true,
-            value
-          });
-        } catch (error) {
-          let errorMessage = 'Error en el servidor'
-      
-          res.status (500) .json({
-              ok: false,
-              errorMessage
-          });
-          console.log(error)
-        }
-      };
+    const valueByUser = async (req, res) => {
+      try {
+        const email = req.query.email;
+        const sales = await Sale.find({
+          email,
+        });
+        res.json({
+          ok: true,
+          sales,
+        });
+      } catch (error) {
+        let errorMessage = "Error en el servidor";
+    
+        res.status(500).json({
+          ok: false,
+          errorMessage,
+        });
+        console.log(error);
+      }
+    };
+
+   
 
       module.exports = {
         crearCotizacion,
         getValue,
-        updateValue,
+        valueByUser
        
       };
