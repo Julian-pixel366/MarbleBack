@@ -26,6 +26,8 @@ const createProduct = async (req, res) => {
     console.log(error);
   }
 };
+
+
 const updateProduct = async (req, res) => {
   try {
     const { _id, ...data } = req.body;
@@ -66,9 +68,31 @@ const getImageProductCategory = async (req, res) => {
   }
 };
 
+const deleteProduct = async (req, res) => {
+  try {
+    const { _id, ...data } = req.body;
+    const id = req.params.id;
+    await db.Products.destroy({
+      where: {
+        id,
+      }
+    }),
+    res.status(200).send("Usuario eliminado correctamente");
+  } catch (error) {
+    let errorMessage = "Error en el servidor";
+
+    res.status(500).json({
+      ok: false,
+      errorMessage,
+    });
+    console.log(error);
+  }
+};
 module.exports = {
   getProducts,
   createProduct,
   updateProduct,
   getImageProductCategory,
-};
+  deleteProduct,
+  
+}  ;
