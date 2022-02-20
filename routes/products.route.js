@@ -10,5 +10,5 @@
  route.post('/', createProduct );
  route.post('/update', updateProduct );
  route.get ('/productsCategory',getImageProductCategory); 
- route.get ('/deleteProduct',deleteProduct )
+ route.get ('/deleteProduct/:id',deleteProduct )
  module.exports = route;

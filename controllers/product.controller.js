@@ -70,14 +70,15 @@ const getImageProductCategory = async (req, res) => {
 
 const deleteProduct = async (req, res) => {
   try {
-    const { _id, ...data } = req.body;
+    
     const id = req.params.id;
-    await db.Products.destroy({
-      where: {
-        id,
-      }
+    await Products.deleteOne({
+      _id: id
     }),
-    res.status(200).send("Usuario eliminado correctamente");
+    res.json({
+      ok: true,
+      message:"producto eliminado con exito",
+    });
   } catch (error) {
     let errorMessage = "Error en el servidor";
 
