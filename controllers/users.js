@@ -52,6 +52,45 @@ const login = async (req, res) => {
     });
   }
 };
+const updateUsuarios = async (req, res) => {
+  try {
+    const {_id, ...data} = req.body;
+    const usuarios = await Usuario.findByIdAndUpdate(_id, data);
+    res.json({
+      ok: true,
+      usuarios
+    });
+  } catch (error) {
+    let errorMessage = 'Error en el servidor'
+
+    res.status (500) .json({
+        ok: false,
+        errorMessage
+    });
+    console.log(error)
+  }
+};
+const deleteUser = async (req, res) => {
+  try {
+    
+    const id = req.params.id;
+    await Usuario.deleteOne({
+      _id: id
+    }),
+    res.json({
+      ok: true,
+      message:"Usuario  eliminado con exito",
+    });
+  } catch (error) {
+    let errorMessage = "Error en el servidor";
+
+    res.status(500).json({
+      ok: false,
+      errorMessage,
+    });
+    console.log(error);
+  }
+};
 
 
 
@@ -59,5 +98,6 @@ module.exports = {
   getUsuarios,
   crearUsuario,
   login,
-  
+  updateUsuarios,
+  deleteUser
 };
