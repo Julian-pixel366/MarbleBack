@@ -71,6 +71,27 @@ const rentsByUser = async (req, res) => {
     console.log(error);
   }
 };
+const deleteRent = async (req, res) => {
+  try {
+    
+    const id = req.params.id;
+    await Rent.deleteOne({
+      _id: id
+    }),
+    res.json({
+      ok: true,
+      message:"Abono  eliminado con exito",
+    });
+  } catch (error) {
+    let errorMessage = "Error en el servidor";
+
+    res.status(500).json({
+      ok: false,
+      errorMessage,
+    });
+    console.log(error);
+  }
+};
 
 
 
@@ -79,6 +100,6 @@ module.exports = {
   getRents,
   crearAbono,
   updateRents,
-  rentsByUser
- 
+  rentsByUser,
+ deleteRent
 };

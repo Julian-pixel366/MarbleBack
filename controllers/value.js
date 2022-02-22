@@ -52,12 +52,34 @@ const crearCotizacion = async (req, res) => {
         console.log(error);
       }
     };
+    const deleteValue = async (req, res) => {
+      try {
+        
+        const id = req.params.id;
+        await Value.deleteOne({
+          _id: id
+        }),
+        res.json({
+          ok: true,
+          message:"Venta  eliminado con exito",
+        });
+      } catch (error) {
+        let errorMessage = "Error en el servidor";
+    
+        res.status(500).json({
+          ok: false,
+          errorMessage,
+        });
+        console.log(error);
+      }
+    };
 
    
 
       module.exports = {
         crearCotizacion,
         getValue,
-        valueByUser
+        valueByUser,
+        deleteValue
        
       };

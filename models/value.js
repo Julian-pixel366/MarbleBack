@@ -36,6 +36,9 @@ const valueSchema = Schema ({
     size: {
         type: String,
         require: true 
+    },
+    shipped:{
+        type: String, 
     }
 });
 
