@@ -1,5 +1,7 @@
 const Usuario = require("../models/user");
 const bcrypt = require("bcrypt");
+const { append } = require("express/lib/response");
+const { defaultMaxListeners } = require("nodemailer/lib/xoauth2");
 const getUsuarios = async (req, res) => {
   const users = await Usuario.find({});
   res.json({
@@ -91,7 +93,39 @@ const deleteUser = async (req, res) => {
     console.log(error);
   }
 };
+const sendMail = async (req, res) => {
+  console.log("request came");
+  let user = req.body;
+  sendMail(user, info => {
+    console.log('Se ha envado un correo de verificación a tu email ${info.messageId}');
+    res.send(info);
+  });
 
+
+async function sendMail(user, callback) {
+  let transporter = nodemailer.createTransport({
+    host: "andresbg446@gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: datails.email,
+      password: details.password
+    }
+
+
+  });
+
+  let mailOptions = {
+    from: "andresbg446@gmail.com",
+    to: user.email,
+    subject: "Bienvenidos a marbleSystem",
+    html: '<h1>Hola ${user.name}</h1><br><h4>Gracias por unirse</h4>'
+  };
+
+  let info = await transporter.sendMail(mailOptions);
+  callback(info);
+}
+};
 
 
 module.exports = {
@@ -99,5 +133,6 @@ module.exports = {
   crearUsuario,
   login,
   updateUsuarios,
-  deleteUser
+  deleteUser,
+  sendMail
 };
