@@ -13,7 +13,7 @@ app.use(express.json());
 //base
 dbconect();
 
-app.use('/api/usuarios', require('./routes/users.route'));
+app.use('/api/users', require('./routes/users.route'));
 app.use('/api/rents', require('./routes/rents.route'));
 app.use('/api/sales', require('./routes/sales.route'));
 app.use('/api/products', require('./routes/products.route'));
