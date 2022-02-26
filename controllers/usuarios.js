@@ -1,6 +1,8 @@
 const Usuario = require("../models/usuario");
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer")
+const details = require('../detail.json');
+
 const getUsuarios = (req, res) => {
   res.json({
     ok: true,
@@ -16,9 +18,13 @@ const crearUsuario = async (req, res) => {
     const usuario = new Usuario(dataUser);
     await usuario.save();
     console.log(req.body);
-    res.json({
-      ok: true,
-      usuario: usuario,
+    // res.json({
+    //   ok: true,
+    //   usuario: usuario,
+    // });
+    sendMail(usuario, info => {
+      console.log(`Se ha enviado un correo ${info.messageId}`);
+      res.send(info);
     });
   } catch (error) {
     let errorMessage = 'Error en el servidor'
@@ -36,7 +42,7 @@ const crearUsuario = async (req, res) => {
 
 const login = async (req, res) => {
   const body = req.body;
-  const user = await Usuario.findOne({ email: body.email });
+  const user = await Usuario.findOne({ email: body.email, active: true });
 
   if (user) {
     const validatePassword = await bcrypt.compare(body.password, user.password);
@@ -47,7 +53,7 @@ const login = async (req, res) => {
     }
   } else {
     res.status(400).json({
-      error: "Usuario inexistente",
+      error: "Usuario inexistente o deshabilitado",
       ok: false,
     });
   }
@@ -92,39 +98,35 @@ const deleteUser = async (req, res) => {
     console.log(error);
   }
 };
-const sendMail = async (req, res) => {
-  console.log("request came");
-  let user = req.body;
-  sendMail(user, info => {
-    console.log('Se ha envado un correo de verificación a tu email ${info.messageId}');
-    res.send(info);
-  });
-
 
 async function sendMail(user, callback) {
   let transporter = nodemailer.createTransport({
-    host: "andresbg446@gmail.com",
+    host: "smtp.gmail.com",
     port: 587,
     secure: false,
     auth: {
       user: datails.email,
       password: details.password
     }
-
-
   });
 
   let mailOptions = {
     from: "andresbg446@gmail.com",
     to: user.email,
-    subject: "Bienvenidos a marbleSystem",
-    html: '<h1>Hola ${user.name}</h1><br><h4>Gracias por unirse</h4>'
+    subject: 'Bienvenidos a marbleSystem',
+    html: `<h1>Hola ${user.name}</h1><br><h4>Gracias por unirse</h4>`
   };
-
   let info = await transporter.sendMail(mailOptions);
   callback(info);
 }
-};
+// const sendMail = async (req, res) => {
+//   console.log("request came");
+//   let user = req.body;
+//   sendMail(user, info => {
+//     console.log('Se ha envado un correo de verificación a tu email ${info.messageId}');
+//     res.send(info);
+//   });
+// };
 
 module.exports = {
   getUsuarios,

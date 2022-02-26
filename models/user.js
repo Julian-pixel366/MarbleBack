@@ -43,6 +43,11 @@ const UsuarioSchema = Schema ({
         default: 'CLIENT',
         required: [true],
         enum: rolesValidos,
+    },
+    active: {
+        type: Boolean,
+        default: true,
+        required: [true]
     }
 });
 

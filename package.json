@@ -1,7 +1,7 @@
 {
   "name": "MarbleBack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Back to Marble",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
