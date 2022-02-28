@@ -12,7 +12,8 @@ const ProductSchema = Schema ({
     },
     category: {
         type: String,
-        require: true
+        required: [true],
+        
     },
     material: {
         type: String,
@@ -33,6 +34,11 @@ const ProductSchema = Schema ({
     image:{
         type:  String,
         require: true,
+    },
+    active: {
+        type: Boolean,
+        default: true,
+        required: [true]
     }
 });
 
