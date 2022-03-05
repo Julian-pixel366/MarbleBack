@@ -2,8 +2,8 @@ const Usuario = require("../models/user");
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const mailgun = require("mailgun-js");
-const ng = mailgun({apiKey: api_key, domain:DOMAIN})
-const details = require('./../detail.json');
+// const ng = mailgun({apiKey: api_key, domain:DOMAIN})
+// const details = require('./../detail.json');
 const getUsuarios = async (req, res) => {
   const users = await Usuario.find({});
   res.json({

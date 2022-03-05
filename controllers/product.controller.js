@@ -50,12 +50,22 @@ const updateProduct = async (req, res) => {
 const getImageProductCategory = async (req, res) => {
   try {
     const category = req.query.category;
+    // const data = [];
     const productsCategory = await Products.find({
       category,
+      active: true
     });
+    // const contadorCocinas = await Products.count({category: 'cocinas'});
+    // data.push({category: 'cocinas', count: contadorCocinas});
+    // const contadorMesones =  await Products.count({category: 'mesones'});
+    // data.push({category: 'mesones', count: contadorMesones});
+    // const contadorBanos = await Products.count({category: 'banos'});
+    // data.push({category: 'banos', count: contadorBanos});
+
     res.json({
       ok: true,
       productsCategory,
+      // data: data
     });
   } catch (error) {
     let errorMessage = "Error en el servidor";
