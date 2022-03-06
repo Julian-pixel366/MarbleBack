@@ -12,5 +12,6 @@ route.post('/login', login );
 route.post('/update', updateUsuarios );
 route.get ('/deleteUsers/:id',deleteUser );
 route.post('/email', sendMail )
+route.put
 
 module.exports = route;
