@@ -99,6 +99,5 @@ module.exports = {
   createProduct,
   updateProduct,
   getImageProductCategory,
-  deleteProduct,
-  
+  deleteProduct  
 }  ;
