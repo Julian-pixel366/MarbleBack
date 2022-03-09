@@ -1,6 +1,8 @@
 const Usuario = require("../models/user");
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
+const { config } = require("dotenv");
+const { validate } = require("../models/user");
 
 const getUsuarios = async (req, res) => {
   const users = await Usuario.find({});
@@ -114,6 +116,95 @@ async function sendMail(user, callback) {
   callback(info);
 }
 
+/* const forgotPassword = async (req,res) =>{
+  const {email} = req.body;
+  if (!(email)){
+    return res.status(400).json({message:'emaiñ no encontrado'});
+  }
+
+  const message = 'Se ha enviado un correo con link de activacion ';
+  let verificationLink;
+  let emailStatus= 'Ok';
+
+  const userRepository = getRepository(Users);
+
+  let user = Users;
+
+  try {
+    user = await userRepository.findOneOrFail({where: {email}})
+    const token = jwt.sign ({usserId: user.id, email: user.email },config.jwtSecret, {expiresIn: '10m'} );
+    verificationLink = `http://localhost:3000/new-password/${token}`;
+    user.resetToken = token;
+  } catch (error) {
+    return res.json({message});
+  }
+
+  /* Send Email */
+   
+ /*  try {
+    
+  } catch (error) {
+    emailStatus = error;
+    return res.status(400).json ({message: 'Something goes wrong!'});
+
+  }
+
+  try {
+    await userRepository.save(user);
+    
+  } catch (error) {
+    emailStatus = error;
+    return res.status(400).json ({message: 'Something goes wrong!'});
+    
+  }
+
+  res.json ({message, info: emailStatus});
+
+
+
+}
+
+const newPassword = async (req, res ) => {
+  
+  const {newPassword} = req.body;
+  const resetToken = req.headers.reset as  string;
+
+  if (!(resetToken && newPassword)){
+    res.status(400).json({message: 'todos los campos son requeridos '});
+
+  }
+
+  const userRepository = getRepository(Users);
+  let jwtPayload;
+  let user =Users;
+
+  try {
+    jwtPayload = jwt.verify(resetToken,config.jwtSecretReset);
+    user = await userRepository.findOneOrFail({where: {resetToken}});
+  } catch (error) {
+    return res.status(401).json({ message : 'something goes grong'});
+    
+  }
+
+  user.password = newPassword;
+  const validationsOps = {validationError: {target: false, value: false}};
+  const errors = await validate (user, validationsOps);
+
+  if  (errors.length > 0) {
+    return res.status(400).json (errors);
+
+  }
+
+  try {
+    user.hashPassword();
+    await userRepository.save(user);
+  } catch (error) {
+
+    return res.status(401).json({ message : 'something goes grong'});
+  }
+  res.json ({message: 'Password changed' });
+}
+ */ 
 
 module.exports = {
   getUsuarios,
@@ -121,5 +212,7 @@ module.exports = {
   login,
   updateUsuarios,
   deleteUser,
-  sendMail
+  sendMail,
+  /* forgotPassword,
+  newPassword */
 };

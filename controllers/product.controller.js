@@ -55,12 +55,7 @@ const getImageProductCategory = async (req, res) => {
       category,
       active: true
     });
-    // const contadorCocinas = await Products.count({category: 'cocinas'});
-    // data.push({category: 'cocinas', count: contadorCocinas});
-    // const contadorMesones =  await Products.count({category: 'mesones'});
-    // data.push({category: 'mesones', count: contadorMesones});
-    // const contadorBanos = await Products.count({category: 'banos'});
-    // data.push({category: 'banos', count: contadorBanos});
+
 
     res.json({
       ok: true,
