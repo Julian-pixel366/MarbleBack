@@ -50,12 +50,17 @@ const updateProduct = async (req, res) => {
 const getImageProductCategory = async (req, res) => {
   try {
     const category = req.query.category;
+    // const data = [];
     const productsCategory = await Products.find({
       category,
+      active: true
     });
+
+
     res.json({
       ok: true,
       productsCategory,
+      // data: data
     });
   } catch (error) {
     let errorMessage = "Error en el servidor";
@@ -94,6 +99,5 @@ module.exports = {
   createProduct,
   updateProduct,
   getImageProductCategory,
-  deleteProduct,
-  
+  deleteProduct  
 }  ;

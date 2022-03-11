@@ -45,6 +45,10 @@ const UsuarioSchema = Schema ({
         type: Boolean,
         default: true,
         required: [true]
+    },
+    resetLink:{
+        data : String,
+        default: ''
     }
 });
 
