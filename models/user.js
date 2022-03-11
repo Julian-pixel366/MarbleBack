@@ -23,17 +23,14 @@ const UsuarioSchema = Schema ({
         type: String,
         
     },
-
     document: {
         type: String,
         require: true
     },
-
     address: {
         type: String,
         
     },   
-    
     city: {
         type: String,
         require: true
@@ -50,9 +47,5 @@ const UsuarioSchema = Schema ({
         required: [true]
     }
 });
-
-
-
-
 
 module.exports = model('Usuario', UsuarioSchema);
