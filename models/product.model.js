@@ -31,6 +31,10 @@ const ProductSchema = Schema ({
         type: String,
         required: true
     },
+    promo: {
+        type: String,
+        
+    },
     image:{
         type:  String,
         require: true,

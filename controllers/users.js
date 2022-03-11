@@ -100,16 +100,20 @@ async function sendMail(user, callback) {
     port: 587,
     secure: false,
     auth: {
-      user: 'andresbg446@gmail.com',
-      pass: 'andres0101'
+      user: 'marmolesmendoza@gmail.com',
+      pass: 'Marmen08'
     }
   });
 
   let mailOptions = {
     from: "andresbg446@gmail.com",
     to: user.email,
-    subject: 'Bienvenidos a marbleSystem',
-    html: `<h1>Hola ${user.name}</h1><br><h4>Gracias por unirse</h4>`
+    subject:  'src:  Bienvenidos a Marmoles Mendoza',
+    html: `<h1>Hola ${user.name}</h1><br><h4>Gracias por unirse</h4><br><h4>Marmoles Mendoza le desea una grta bienvenida</h4>
+    <br>  <img>
+    src="assets/img/sede.jpg"
+    alt=""
+  </img>` 
   };
   let info = await transporter.sendMail(mailOptions);
   callback(info);
