@@ -119,6 +119,35 @@ async function sendMail(user, callback) {
   callback(info);
 }
 
+const forgot = async (req, res) => {
+  const thisUser = getUsuarios(req.body.email);
+  if (thisUser) {
+      const id = req.params.id;
+      const request = {
+          id,
+          email: thisUser.email,
+      };
+      createResetRequest(request);
+      sendResetLink(thisUser.email, id);
+  }
+  res.status(200).json();
+};
+
+const reset = async (req, res) => {
+  const thisRequest = getResetRequest(req.body.id);
+  if (thisRequest) {
+      const user = getUsuarios(thisRequest.email);
+      bcrypt.hash(req.body.password, 10).then(hashed => {
+          user.password = hashed;
+          updateUsuarios(user);
+          res.status(204).json();
+      })
+  } else {
+      res.status(404).json();
+  }
+};
+
+
 /* const forgotPassword = async (req,res) =>{
   const {email} = req.body;
   if (!(email)){
@@ -216,6 +245,6 @@ module.exports = {
   updateUsuarios,
   deleteUser,
   sendMail,
-  /* forgotPassword,
-  newPassword */
+  forgot,
+  reset
 };

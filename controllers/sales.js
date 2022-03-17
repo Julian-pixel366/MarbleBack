@@ -1,5 +1,7 @@
+const req = require("express/lib/request");
 const Sale = require("../models/sale");
 const getSales = async (req, res) => {
+  const newSale = new Date();
   const sales = await Sale.find({});
   res.json({
     ok: true,
@@ -94,11 +96,13 @@ const deleteSale = async (req, res) => {
 
 
 
+
 module.exports = {
   crearVenta,
   getSales,
   updateSales,
   salesByUser,
-  deleteSale
+  deleteSale,
+
  
 };

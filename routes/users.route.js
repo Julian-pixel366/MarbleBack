@@ -3,7 +3,9 @@
  */
 const { Router } = require('express');
 const { getUsuarios, crearUsuario,login, updateUsuarios,
-     deleteUser, sendMail/* , forgotPassword, newPassword  */ } = require('../controllers/users')
+     deleteUser, sendMail, 
+     forgot,
+     reset} = require('../controllers/users')
 
 const route = Router();
 
@@ -13,6 +15,6 @@ route.post('/login', login );
 route.post('/update', updateUsuarios );
 route.get ('/deleteUsers/:id',deleteUser );
 route.post('/email', sendMail )
-/* route.put ('/forgot-password', forgotPassword )
-route.put ('/new-password', newPassword ) */
+route.post ('/forgot', forgot)
+route.patch ('/reset', reset ) 
 module.exports = route;

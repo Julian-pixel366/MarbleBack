@@ -29,7 +29,7 @@ const SaleSchema = Schema ({
     product: {
         type: String,
         require: true
-    }
+    }    
 });
 
 module.exports = model('Sale', SaleSchema);
