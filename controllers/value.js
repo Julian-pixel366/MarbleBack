@@ -39,7 +39,7 @@ const crearCotizacion = async (req, res) => {
         });
         res.json({
           ok: true,
-          Value,
+          value,
         });
       } catch (error) {
         let errorMessage = "Error en el servidor";
@@ -73,6 +73,24 @@ const crearCotizacion = async (req, res) => {
       }
     };
 
+    const updateValue = async (req, res) => {
+      try {
+        const {_id, ...data} = req.body;
+        const value = await Rent.findByIdAndUpdate(_id, data);
+        res.json({
+          ok: true,
+          value
+        });
+      } catch (error) {
+        let errorMessage = 'Error en el servidor'
+    
+        res.status (500) .json({
+            ok: false,
+            errorMessage
+        });
+        console.log(error)
+      }
+    };
    
 
       module.exports = {
@@ -81,6 +99,7 @@ const crearCotizacion = async (req, res) => {
         getAllValues,
         crearCotizacion,
         valueByUser,
-        deleteValue
+        deleteValue,
+        updateValue
        
       };
