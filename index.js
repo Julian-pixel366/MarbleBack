@@ -19,7 +19,7 @@ app.use('/api/sales', require('./routes/sales.route'));
 app.use('/api/products', require('./routes/products.route'));
 app.use('/api/value', require('./routes/value.route'));
 app.use('/api/reports', require('./routes/reports.route'));
-app.use('/api/password-reset', require("./routes/passwordReset"));
+/* app.use('/api/password-reset', require("./routes/passwordReset")); */
 
 //console.log(process.env);
 //rutas

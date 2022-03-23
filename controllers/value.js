@@ -1,6 +1,5 @@
-const value = require("../models/value");
 const Value = require("../models/value");
-const getValue = async (req, res) => {
+const getAllValues = async (req, res) => {
   const value = await Value.find({});
   res.json({
     ok: true,
@@ -10,7 +9,7 @@ const getValue = async (req, res) => {
 
 const crearCotizacion = async (req, res) => {
     try {
-      const value = new value(req.body);
+      const value = new Value(req.body);
       await value.save();
       console.log(req.body);
       res.json({
@@ -35,12 +34,12 @@ const crearCotizacion = async (req, res) => {
     const valueByUser = async (req, res) => {
       try {
         const email = req.query.email;
-        const sales = await Sale.find({
+        const value = await Value.find({
           email,
         });
         res.json({
           ok: true,
-          sales,
+          Value,
         });
       } catch (error) {
         let errorMessage = "Error en el servidor";
@@ -77,8 +76,10 @@ const crearCotizacion = async (req, res) => {
    
 
       module.exports = {
+        
+        
+        getAllValues,
         crearCotizacion,
-        getValue,
         valueByUser,
         deleteValue
        

@@ -1,7 +1,7 @@
 const req = require("express/lib/request");
 const Sale = require("../models/sale");
 const getSales = async (req, res) => {
-  const newSale = new Date();
+  
   const sales = await Sale.find({});
   res.json({
     ok: true,
@@ -11,6 +11,7 @@ const getSales = async (req, res) => {
 
 const crearVenta = async (req, res) => {
   try {
+    const newSale = new Date();
     const sale = new Sale(req.body);
     await sale.save();
     console.log(req.body);
