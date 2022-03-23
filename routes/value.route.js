@@ -1,10 +1,10 @@
 const { Router } = require ('express');
-const { getValue,  crearCotizacion, valueByUser, deleteValue } = require('../controllers/value');
+const { getAllValues,  crearCotizacion, valueByUser, deleteValue } = require('../controllers/value');
 
 
 const route = Router();
 
-route.get('/', getValue );
+route.get('/', getAllValues );
 route.post('/', crearCotizacion );
 route.get('/valueByUser', valueByUser );
 route.get ('/deleteValue/:id',deleteValue )
