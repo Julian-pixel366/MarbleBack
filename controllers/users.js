@@ -129,8 +129,17 @@ const forgot = async (req, res) => {
       };
       createResetRequest(request);
       sendResetLink(thisUser.email, id);
-  }
-  res.status(200).json();
+      res.status(200).json();
+  } (error)
+    let errorMessage = "Error en el servidor";
+
+    res.status(400).json({
+      ok: false,
+      errorMessage,
+    });
+    console.log(error);
+  
+ 
 };
 
 const reset = async (req, res) => {

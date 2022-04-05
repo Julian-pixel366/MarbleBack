@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
     try {
         const schema = Joi.object({ email: Joi.string().email().required() });
         const { error } = schema.validate(req.body);
-        if (error) return res.status(400).send(error.details[0].message);
+        if (error) return res.status(400).send("email incorrecto");
 
         const user = await User.findOne({ email: req.body.email });
         if (!user)
@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
         const link = `${process.env.BASE_URL}/password-reset/${user._id}/${token.token}`;
         await sendEmail(user.email, "Password reset", link);
 
-        res.status(200).send("password reset link sent to your email account");
+      if (res) res.status(200).send("password reset link sent to your email account");
     } catch (error) {
         res.status(500).send("An error occured");
         console.log(error);
