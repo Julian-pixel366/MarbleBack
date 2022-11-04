@@ -11,4 +11,4 @@ route.get ('/deleteValue/:id',deleteValue );
 route.post('/updateValue', updateValue );
 
 
-module.exports = route;
+module.exports = route; 
