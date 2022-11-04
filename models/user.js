@@ -50,6 +50,6 @@ const UsuarioSchema = Schema ({
         data : String,
         default: ''
     }
-}); 
+});  
 
 module.exports = model('Usuario', UsuarioSchema);
