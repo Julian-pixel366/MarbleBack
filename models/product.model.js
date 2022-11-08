@@ -19,7 +19,7 @@ const ProductSchema = Schema ({
     },
     material: {
         type: String,
-        require: true
+        require: false
     },
     price: {
         type: String,

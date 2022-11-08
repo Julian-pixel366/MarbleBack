@@ -19,13 +19,17 @@ const crearUsuario = async (req, res) => {
     const usuario = new Usuario(dataUser);
     await usuario.save();
     console.log(req.body);
-    sendMail(usuario, info => {
-      console.log(`Se ha enviado un correo ${info.messageId}`);
-      res.send(info);
-    });
+    res.json({
+      ok: true,
+      user: dataUser
+    })
+    // sendMail(usuario, info => {
+    //   console.log(`Se ha enviado un correo ${info.messageId}`);
+    //   res.send(info);
+    // });
   } catch (error) {
     let errorMessage = 'Error en el servidor'
-    if (error.code==11000){
+    if (error.code==43){
         errorMessage='El email ya existe en la base de datos ' 
     } 
     res.status (500) .json({
