@@ -1974,7 +1974,7 @@ ValueComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h4", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "COTIZACIONES");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "COTIZACIONES Y PLANES");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "form", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "input", 6);
@@ -3105,7 +3105,7 @@ SaleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](28, "div", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](30, "COTIZA YA");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](30, "COTIZA Y ARMA TU PLAN");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "a", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, "INICIA SESION");
@@ -3857,7 +3857,7 @@ ValueAddComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefine
     } }, decls: 111, vars: 13, consts: [[1, "h1"], [3, "formGroup"], [1, "form-group"], ["for", "validationDefault01", 1, "form-label"], ["type", "text", "id", "exampleInputEmail1", "placeholder", "Ingrese nombre completo", "formControlName", "name", "required", "true", "maxlength", "15", "minlength", "5", 1, "form-control"], ["class", "text-danger", 4, "ngIf"], ["for", "exampleInputEmail1"], ["type", "email", "id", "exampleInputEmail1", "aria-describedby", "emailHelp", "placeholder", "Ingresar email", "formControlName", "email", 1, "form-control"], ["for", "exampleInputPassword1"], ["type", "text", "id", "exampleInputPassword1", "placeholder", "Tel\u00E9fono o celular", "formControlName", "phone", 1, "form-control"], ["type", "text", "id", "exampleInputPassword1", "placeholder", "Direcci\u00F3n ", "formControlName", "addres", 1, "form-control"], ["id", "emailHelp", 1, "form-text", "text-muted"], ["for", "Ciudad"], ["id", "inputState", "formControlName", "city", 1, "form-control"], ["disabled", "", "selected", ""], ["type", "text", "id", "exampleInputPassword1", "placeholder", "Largo-ancho", "formControlName", "size", 1, "form-control"], ["id", "inputState", "formControlName", "product", 1, "form-control"], ["id", "inputState", "formControlName", "material", 1, "form-control"], ["id", "inputState", "formControlName", "color", 1, "form-control"], ["for", "Envio"], ["type", "text", "id", "exampleInputPassword1", "placeholder", "valor", "formControlName", "shipped", 1, "form-control"], [1, "form-check"], ["type", "checkbox", "id", "exampleCheck1", 1, "form-check-input"], ["for", "exampleCheck1", 1, "form-check-label"], ["type", "submit", 1, "btn", "btn-primary", 3, "disabled", "click"], ["bsModal", "", "tabindex", "-1", "role", "dialog", "aria-labelledby", "dialog-static-name", 1, "modal", "fade"], ["modalSuccess", "bs-modal"], [1, "modal-dialog", "modal-sm"], [1, "modal-content"], [1, "modal-header"], ["id", "dialog-static-name", 1, "modal-title", "pull-left"], ["type", "button", "aria-label", "Close", 1, "btn-close", "close", "pull-right", 3, "click"], ["aria-hidden", "true", 1, "visually-hidden"], [1, "modal-body"], [1, "text-danger"]], template: function ValueAddComponent_Template(rf, ctx) { if (rf & 1) {
         const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "h1", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "COTIZACIONES");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "COTIZACIONES Y PLANES");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "form", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 2);
@@ -4546,7 +4546,7 @@ ClientValueComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h4", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "COTIZACIONES");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "COTIZA Y ARMA TU PLAN");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "form", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "input", 6);
@@ -6330,7 +6330,7 @@ ClientValueAddComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵ
     } }, decls: 83, vars: 11, consts: [[1, "h1"], [3, "formGroup"], [1, "form-group"], ["for", "validationDefault01", 1, "form-label"], ["type", "text", "id", "exampleInputEmail1", "placeholder", "Ingrese nombre completo", "formControlName", "name", "required", "true", "maxlength", "15", "minlength", "5", 1, "form-control"], ["class", "text-danger", 4, "ngIf"], ["for", "exampleInputEmail1"], ["type", "email", "id", "exampleInputEmail1", "aria-describedby", "emailHelp", "placeholder", "Ingresar email", "formControlName", "email", 1, "form-control"], ["for", "exampleInputPassword1"], ["type", "text", "id", "exampleInputPassword1", "placeholder", "Tel\u00E9fono o celular", "formControlName", "phone", 1, "form-control"], ["type", "text", "id", "exampleInputPassword1", "placeholder", "Direcci\u00F3n ", "formControlName", "addres", 1, "form-control"], ["id", "emailHelp", 1, "form-text", "text-muted"], ["for", "Ciudad"], ["id", "inputState", "formControlName", "city", 1, "form-control"], ["disabled", "", "selected", ""], ["id", "inputState", "formControlName", "product", 1, "form-control"], ["id", "inputState", "formControlName", "material", 1, "form-control"], [1, "form-check"], ["type", "checkbox", "id", "exampleCheck1", 1, "form-check-input"], ["for", "exampleCheck1", 1, "form-check-label"], ["type", "submit", 1, "btn", "btn-primary", 3, "disabled", "click"], ["bsModal", "", "tabindex", "-1", "role", "dialog", "aria-labelledby", "dialog-static-name", 1, "modal", "fade"], ["modalSuccess", "bs-modal"], [1, "modal-dialog", "modal-sm"], [1, "modal-content"], [1, "modal-header"], ["id", "dialog-static-name", 1, "modal-title", "pull-left"], ["type", "button", "aria-label", "Close", 1, "btn-close", "close", "pull-right", 3, "click"], ["aria-hidden", "true", 1, "visually-hidden"], [1, "modal-body"], [1, "text-danger"]], template: function ClientValueAddComponent_Template(rf, ctx) { if (rf & 1) {
         const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "h1", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "COTIZACIONES");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "COTIZA Y ARMA TU PLAN");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "form", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 2);
@@ -8234,7 +8234,7 @@ const ROUTES = [
     { path: 'user', title: 'Usuarios', icon: 'nc-single-02', class: '', roles: 'admin' },
     { path: 'listproduct', title: 'Productos', icon: 'nc-bag-16', class: '', roles: 'admin' },
     { path: 'sales', title: 'Ventas ', icon: 'nc-shop', class: '', roles: 'admin' },
-    { path: 'value', title: 'Cotizaciones', icon: 'nc-paper', class: '', roles: 'admin' },
+    { path: 'value', title: 'Cotiza y arma tu plan', icon: 'nc-paper', class: '', roles: 'admin' },
     { path: 'clientsale', title: 'Compras', icon: 'nc-cart-simple', class: '', roles: 'client' },
     { path: 'valueclient', title: 'Cotizaciones', icon: 'nc-paper', class: '', roles: 'client' },
 ];
